@@ -1,7 +1,7 @@
 import React from 'react';
-import PointsMap from "./PointsMap";
+import {DetailsMap} from "./PointsMap";
 
-const PlaceDetail = ({ data }) => {
+const PlaceDetail = ({data}) => {
     return (
         <section>
             <div className="card mb-4">
@@ -12,7 +12,7 @@ const PlaceDetail = ({ data }) => {
                     </h6>
                 </div>
             </div>
-            <PointsMap data={[data]}/>
+            <DetailsMap data={data}/>
         </section>
     );
 };

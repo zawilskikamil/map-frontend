@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = ({ data }) => {
+const Home = ({data}) => {
     return (
         <div>
             {data.map((data, i) => (

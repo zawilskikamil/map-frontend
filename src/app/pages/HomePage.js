@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {API_BASE_URL} from "./ApiUrls";
+import {API_BASE_URL} from "../common/ApiUrls";
 import GenericFetchPage from "./GenericFetchPage";
 import Home from "../components/Home";
 

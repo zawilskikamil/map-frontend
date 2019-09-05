@@ -1,6 +1,6 @@
 import React from 'react';
 import PlaceDetails from '../components/PlaceDetail';
-import {API_MAP_URL} from "./ApiUrls";
+import {API_MAP_URL} from "../common/ApiUrls";
 import GenericFetchPage from "./GenericFetchPage";
 
 const PlaceDetailPage = ({match}) => {
