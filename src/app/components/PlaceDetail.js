@@ -7,9 +7,18 @@ const PlaceDetail = ({data}) => {
             <div className="card mb-4">
                 <div className="card-body">
                     <h5 className="card-title">{data.name}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">
-                        latitude: {data.latitude} longitude: {data.longitude}
-                    </h6>
+                    <p className="mb-2">
+                        address {data.address}
+                    </p>
+                    <p className="mb-2">
+                        city {data.city}
+                    </p>
+                    <p className="mb-2">
+                        web Page {data.webPage}
+                    </p>
+                    <p className="mb-2">
+                        google Map Tag {data.googleMapTag}
+                    </p>
                 </div>
             </div>
             <DetailsMap data={data}/>
