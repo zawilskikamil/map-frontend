@@ -1,7 +1,7 @@
 import React from 'react';
 import PlaceDetails from '../components/PlaceDetail';
 import {API_MAP_URL} from "./ApiUrls";
-import GenericPage from "./GenericPage";
+import GenericFetchPage from "./GenericFetchPage";
 
 const PlaceDetailPage = ({match}) => {
     const {
@@ -9,7 +9,7 @@ const PlaceDetailPage = ({match}) => {
     } = match;
     const url = `${API_MAP_URL}/${placeId}`;
     return (
-        <GenericPage TargetPage={PlaceDetails} url={url}/>
+        <GenericFetchPage TargetPage={PlaceDetails} url={url}/>
     );
 };
 

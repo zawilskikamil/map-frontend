@@ -1,14 +1,13 @@
 import React from 'react';
 
 import {API_BASE_URL} from "./ApiUrls";
-import GenericPage from "./GenericPage";
+import GenericFetchPage from "./GenericFetchPage";
 import Home from "../components/Home";
 
 const PlaceDetailPage = () => {
     const url = `${API_BASE_URL}/page/home`;
     return (
-        <GenericPage TargetPage={Home} url={url}/>
-
+        <GenericFetchPage TargetPage={Home} url={url}/>
     );
 };
 

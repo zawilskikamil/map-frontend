@@ -1,4 +1,5 @@
 import React from 'react';
+import PointsMap from "./PointsMap";
 
 const PlaceDetail = ({ data }) => {
     return (
@@ -11,6 +12,7 @@ const PlaceDetail = ({ data }) => {
                     </h6>
                 </div>
             </div>
+            <PointsMap data={[data]}/>
         </section>
     );
 };

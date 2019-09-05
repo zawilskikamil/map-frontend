@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 
 import HomePage from "./pages/HomePage";
+import MapPage from "./pages/MapPage";
 import PlaceListPage from "./pages/PlaceListPage";
 import PlaceDetailPage from "./pages/PlaceDetailPage";
 
@@ -26,6 +27,7 @@ const Main = () => {
             <Switch>
                 <Route path="/" exact component={HomePage}/>
                 <Route path="/list/" exact component={PlaceListPage}/>
+                <Route path="/map/" exact component={MapPage}/>
                 <Route path="/place/:placeId" exact component={PlaceDetailPage}/>
                 <Route component={NoMatchRoute}/>
             </Switch>

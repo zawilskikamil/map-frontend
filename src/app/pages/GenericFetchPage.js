@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from "axios";
 
 
-const GenericPage = ({TargetPage, url}) => {
+const GenericFetchPage = ({TargetPage, url}) => {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -39,4 +39,4 @@ const GenericPage = ({TargetPage, url}) => {
     );
 };
 
-export default GenericPage;
+export default GenericFetchPage;
