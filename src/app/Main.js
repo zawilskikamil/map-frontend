@@ -10,9 +10,20 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import {MainMenu} from "./ui/MainMenu";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Container from "@material-ui/core/Container";
+import {ThemeProvider} from '@material-ui/styles';
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 
-
-const NoMatchRoute = () => <div>404 Page</div>;
+const theme = createMuiTheme({
+    spacing: 4,
+    palette: {
+        primary: {
+            light: "#263238",
+            main: "#FFCA28",
+            dark: "#607D8B",
+            contrastText: "#CFD8DC",
+        },
+    }
+});
 
 const useStyles = makeStyles(() => ({
     mainContent: {
@@ -20,21 +31,27 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
+const NoMatchRoute = () => <div>404 Page</div>;
+
 const Main = () => {
     const classes = useStyles();
     return (
+
         <Router>
             <CssBaseline/>
-            <MainMenu/>
-            <Container className={classes.mainContent}>
-                <Switch>
-                    <Route path={HOME} exact component={HomePage}/>
-                    <Route path={PLACES} exact component={PlaceListPage}/>
-                    <Route path={MAP} exact component={MapPage}/>
-                    <Route path={PLACES_DETAILS} exact component={PlaceDetailPage}/>
-                    <Route component={NoMatchRoute}/>
-                </Switch>
-            </Container>
+
+            <ThemeProvider theme={theme}>
+                <MainMenu/>
+                <Container className={classes.mainContent}>
+                    <Switch>
+                        <Route path={HOME} exact component={HomePage}/>
+                        <Route path={PLACES} exact component={PlaceListPage}/>
+                        <Route path={MAP} exact component={MapPage}/>
+                        <Route path={PLACES_DETAILS} exact component={PlaceDetailPage}/>
+                        <Route component={NoMatchRoute}/>
+                    </Switch>
+                </Container>
+            </ThemeProvider>
         </Router>
     );
 };

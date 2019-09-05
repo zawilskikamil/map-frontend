@@ -1,20 +1,14 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import Typography from "@material-ui/core/Typography";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-
-const useStyles = makeStyles(theme => ({
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-}));
+import {Link as RouterLink} from 'react-router-dom';
+import Link from '@material-ui/core/Link';
+import Button from "@material-ui/core/Button";
 
 export const MenuElement = ({link, text}) => {
-    const classes = useStyles();
-
     return (
-        <Typography variant="h6" className={classes.menuButton}>
-            <Link to={link}>{text}</Link>
-        </Typography>
+        <Link component={RouterLink} to={link}>
+            <Button variant="h6">
+                {text}
+            </Button>
+        </Link>
     )
 };

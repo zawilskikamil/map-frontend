@@ -9,14 +9,10 @@ const PointMarker = ({mapPoint}) => {
     return (
         <Marker position={position}>
             <Popup>
-                <div className="card mb-4">
-                    <div className="card-body">
-                        <h5 className="card-title">{mapPoint.name}</h5>
-                        <Link to={PLACES + mapPoint.id}>
-                            <h5 className="card-title">Show details</h5>
-                        </Link>
-                    </div>
-                </div>
+                <Link to={PLACES + mapPoint.id}>
+                    <h5 >{mapPoint.name}</h5>
+                </Link>
+                <h5>{mapPoint.address}</h5>
             </Popup>
         </Marker>
     )
@@ -27,7 +23,7 @@ export const DetailsMap = ({data}) => {
 
     return (
         <div className={'leaflet-container'}>
-            <Map center={position} zoom={12}>
+            <Map center={position} zoom={15}>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

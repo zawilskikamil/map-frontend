@@ -1,20 +1,34 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import {makeStyles} from '@material-ui/core/styles';
+import {Link as RouterLink} from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import {PLACES} from "../common/RoutUrls";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
-const PlaceList = ({ data }) => {
+const useStyles = makeStyles(theme => ({
+    root: {
+        padding: theme.spacing(4, 2),
+        margin: theme.spacing(4, 4),
+    },
+}));
+
+const PlaceList = ({data}) => {
+    const classes = useStyles();
+
     return (
         <div>
-            <h1 className="text-center">Map List</h1>
             {data.map((mapPoint, i) => (
-                <div className="card mb-4" key={i}>
-                    <div className="card-body">
-                        <h5 className="card-title">{mapPoint.name}</h5>
-                        <Link to={PLACES + mapPoint.id}>
-                            <h5 className="card-title">Show details</h5>
+                <Paper className={classes.root} key={i}>
+                    <Typography variant="h6" component="h3">
+                        <Link component={RouterLink} to={PLACES + mapPoint.id}>
+                            {mapPoint.name}
                         </Link>
-                    </div>
-                </div>
+                    </Typography>
+                    <Typography variant="body1" component="h3">
+                        {mapPoint.address}
+                    </Typography>
+                </Paper>
             ))}
         </div>
     )
