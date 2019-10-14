@@ -28,10 +28,8 @@ const useStyles = makeStyles(theme => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
-    },
-    mainContent: {
-        paddingTop: 80,
+        padding: theme.spacing(4),
+        marginTop: 64,
     },
 }));
 
@@ -47,7 +45,7 @@ const Main = () => {
                 <div className={classes.root}>
                     <MapNavigationDrawer/>
                     <main className={classes.content}>
-                        <Container className={classes.mainContent}>
+                        <Container>
                             <Switch>
                                 <Route path={HOME} exact component={HomePage}/>
                                 <Route path={PLACES} exact component={PlaceListPage}/>

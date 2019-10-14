@@ -21,7 +21,6 @@ const PlaceDetail = ({data}) => {
                     </p>
                 </div>
             </div>
-            <DetailsMap data={data}/>
         </section>
     );
 };
