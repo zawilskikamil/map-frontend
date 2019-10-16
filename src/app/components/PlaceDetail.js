@@ -8,6 +8,9 @@ const PlaceDetail = ({data}) => {
                 <div className="card-body">
                     <h5 className="card-title">{data.name}</h5>
                     <p className="mb-2">
+                        address {data.id}
+                    </p>
+                    <p className="mb-2">
                         address {data.address}
                     </p>
                     <p className="mb-2">
