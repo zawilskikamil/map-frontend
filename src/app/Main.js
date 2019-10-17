@@ -23,13 +23,9 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-    },
     content: {
         flexGrow: 1,
-        // padding: theme.spacing(4),
-        marginTop: theme.spacing(10),
+        padding: theme.spacing(4),
     },
 }));
 

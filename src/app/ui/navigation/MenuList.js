@@ -35,8 +35,6 @@ const MenuList = () => {
 
     return (
         <div>
-            <div className={classes.toolbar}/>
-            <Divider/>
             <MaterialMenuList>
                 {menuListElements.map((prop) => {
                     return (
