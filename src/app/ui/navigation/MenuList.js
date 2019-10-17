@@ -44,7 +44,7 @@ const MenuList = () => {
                             </ListItem>
                         </Link>
                     )
-                })};
+                })}
             </MaterialMenuList>
         </div>
     );

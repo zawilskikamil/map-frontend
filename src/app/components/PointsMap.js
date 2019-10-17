@@ -1,11 +1,5 @@
 import React from 'react'
 import {Map, TileLayer, Marker, Popup} from 'react-leaflet'
-import {Link} from "react-router-dom";
-import {PLACES} from "../common/RoutUrls";
-import PlaceDetails from "./PlaceDetail";
-import GenericFetchPageV2 from "../pages/GenericFetchPage";
-import {API_MAP_URL} from "../common/ApiUrls";
-import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import {PlaceDetailComponent} from '../pages/PlaceDetailPage'
@@ -33,7 +27,7 @@ class PointsMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedId: 1,
+            selectedId: null,
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -62,6 +56,11 @@ class PointsMap extends React.Component {
         const bounds = Leaflet.latLngBounds(positions);
         return (
             <>
+                <Container maxWidth='xs'>
+                    <Card fixed>
+                        <PlaceDetailComponent placeId={this.state.selectedId}/>
+                    </Card>
+                </Container>
                 <Card>
                     <div className={'leaflet-container'}>
                         <Map center={positions[0]} zoom={5} bounds={bounds}>
@@ -78,25 +77,10 @@ class PointsMap extends React.Component {
                         </Map>
                     </div>
                 </Card>
-                <Container maxWidth='xs'>
-                    <Card>
-                        <PlaceDetailComponent placeId={this.state.selectedId}/>
-                    </Card>
-
-                </Container>
 
             </>
         )
     }
 }
-
-// const Details = (props) => {
-//     const {selectedId} = props;
-//     return (
-//         <div>
-//             <PlaceDetailComponent placeId={selectedId}/>
-//         </div>
-//     )
-// };
 
 export default PointsMap;

@@ -37,7 +37,7 @@ export class PlaceDetailComponent extends React.Component {
         const { placeId } = props;
         this.state = {
             placeId: placeId,
-            loading: true,
+            loading: false,
             error: false,
             response: null,
         };
