@@ -1,5 +1,5 @@
 import React from 'react';
-import {API_MAP_URL} from "../common/ApiUrls";
+import {API_MAP_URL} from "../../config/ApiUrls";
 import axios from "axios";
 import LinearProgress from '@material-ui/core/LinearProgress';
 

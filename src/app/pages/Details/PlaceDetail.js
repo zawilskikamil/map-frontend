@@ -1,5 +1,5 @@
 import React from 'react';
-import {DetailsMap} from "./PointsMap";
+import {DetailsMap} from "../Map/PointsMap";
 
 const PlaceDetail = ({data}) => {
     return (

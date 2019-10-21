@@ -1,7 +1,7 @@
 import React from 'react'
-import PlaceList from "../components/PlaceList";
-import GenericFetchPage from "./GenericFetchPage";
-import {API_MAP_URL} from "../common/ApiUrls";
+import PlaceList from "./PlaceList";
+import GenericFetchPage from "../GenericFetchPage";
+import {API_MAP_URL} from "../../config/ApiUrls";
 
 const PlaceListPage = () => {
     return (

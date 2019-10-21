@@ -4,7 +4,7 @@ import MaterialMenuList from '@material-ui/core/MenuList';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {makeStyles} from '@material-ui/core/styles';
-import {HOME, MAP, PLACES} from "../../common/RoutUrls";
+import {HOME, MAP, PLACES} from "../../config/routes";
 import {Link as RouterLink} from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 

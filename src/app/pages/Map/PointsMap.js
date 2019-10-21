@@ -1,8 +1,8 @@
 import React from 'react'
 import {Map, TileLayer, Marker, Popup} from 'react-leaflet'
-import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
-import {PlaceDetailComponent} from '../pages/PlaceDetailPage'
+import {PlaceDetailComponent} from '../Details/PlaceDetailPage'
+import Paper from '@material-ui/core/Paper';
 
 export const DetailsMap = ({data}) => {
     const position = [data.latitude, data.longitude];
@@ -27,7 +27,7 @@ class PointsMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedId: null,
+            selectedId: 1,
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -55,12 +55,12 @@ class PointsMap extends React.Component {
 
         const bounds = Leaflet.latLngBounds(positions);
         return (
-            <>
-                <Container maxWidth='xs'>
-                    <Card fixed>
+            <div>
+                <Card open={true}>
+                    <Paper>
                         <PlaceDetailComponent placeId={this.state.selectedId}/>
-                    </Card>
-                </Container>
+                    </Paper>
+                </Card>
                 <Card>
                     <div className={'leaflet-container'}>
                         <Map center={positions[0]} zoom={5} bounds={bounds}>
@@ -77,8 +77,7 @@ class PointsMap extends React.Component {
                         </Map>
                     </div>
                 </Card>
-
-            </>
+            </div>
         )
     }
 }

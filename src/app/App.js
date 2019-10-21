@@ -1,11 +1,7 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 
-import HomePage from "./pages/HomePage";
-import MapPage from "./pages/MapPage";
-import PlaceListPage from "./pages/PlaceListPage";
-import PlaceDetailPage from "./pages/PlaceDetailPage";
-import {HOME, MAP, PLACES, PLACES_DETAILS} from "./common/RoutUrls";
+import routes from "./config/routes";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Container from "@material-ui/core/Container";
@@ -29,9 +25,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const NoMatchRoute = () => <div>404 Page</div>;
 
-const Main = () => {
+const App = () => {
     const classes = useStyles();
     return (
 
@@ -43,11 +38,7 @@ const Main = () => {
                     <main className={classes.content}>
                         <Container maxWidth={false}>
                             <Switch>
-                                <Route path={HOME} exact component={HomePage}/>
-                                <Route path={PLACES} exact component={PlaceListPage}/>
-                                <Route path={MAP} exact component={MapPage}/>
-                                <Route path={PLACES_DETAILS} exact component={PlaceDetailPage}/>
-                                <Route component={NoMatchRoute}/>
+                                {routes}
                             </Switch>
                         </Container>
                     </main>
@@ -58,4 +49,4 @@ const Main = () => {
         ;
 };
 
-export default Main;
+export default App;
